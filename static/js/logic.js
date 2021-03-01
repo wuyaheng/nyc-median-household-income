@@ -17,6 +17,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 // Load in geojson data
 var geoData = "static/data/medianhouseholdincome.json";
 
+
 var geojson;
 
 // Grab data with d3
@@ -24,7 +25,7 @@ d3.json(geoData, function(data) {
     data.features = data.features.filter(d => {
     return d.properties.MHI > 0
   })
-
+  console.log(data)
   // Create a new choropleth layer
   geojson = L.choropleth(data, {
 
