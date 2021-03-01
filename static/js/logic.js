@@ -49,7 +49,7 @@ d3.json(geoData, function(data) {
 
     // Binding a pop-up to each layer
     onEachFeature: function(feature, layer) {
-      layer.bindPopup("<b>" + feature.properties.LOCALNAME + "</b><br>Median Household Income:<br>" +
+      layer.bindTooltip("<b>" + feature.properties.LOCALNAME + "</b><br>Median Household Income: " +
         "$" + feature.properties.MHI);
     }
   }).addTo(myMap);
